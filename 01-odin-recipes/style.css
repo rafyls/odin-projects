@@ -28,3 +28,18 @@ h1 {
 li {
   margin: 15px 0;
 }
+
+#pizza-image {
+  width: 450px;
+  height: auto;
+}
+
+#strawberrypie-image {
+  width: 400px;
+  height: auto;
+}
+
+#tomatosoup-image {
+  width: 300px;
+  height: auto;
+}
