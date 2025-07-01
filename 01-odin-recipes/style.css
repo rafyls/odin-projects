@@ -1,0 +1,30 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-size: 18px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  width: 400px;
+  margin: 0 auto;
+  background-color: rgb(255, 255, 235);
+}
+
+a {
+  display: block;
+  margin: 15px 0;
+}
+
+h1 {
+  text-align: center;
+}
+
+li {
+  margin: 15px 0;
+}
