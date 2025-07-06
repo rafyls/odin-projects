@@ -1,6 +1,6 @@
 # Landing Page: Vacclean
 
-Vacclean is an *imaginary* company that sells different ranges of vaccum cleaners.
+Vacclean is an *imaginary* company that sells different ranges of vacuum cleaners.
 
 This project (landing-page) is the second project of the [Foundations course](https://www.theodinproject.com/paths/foundations/courses/foundations).
 
