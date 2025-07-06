@@ -1,0 +1,86 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: Roboto, sans-serif;
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  text-decoration: none;
+}
+
+.section-header {
+  background-color: #1F2937;
+}
+
+.presentation #hero-main {
+  font-size: 48px;
+  color: #F9FAF8;
+  font-weight: 900;
+  margin: 0;
+}
+
+.section-header h1 {
+  font-size: 24px;
+  color: #F9FAF8;
+}
+
+.section-header a,
+.presentation #hero-secondary {
+  font-size: 18px;
+  color: #E5E7EB;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 200px;
+}
+
+ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 17px;
+}
+
+.presentation {
+  display: flex;
+  align-items: center;
+  gap: 150px;
+  margin: 80px 200px;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+#vacuum-cleaner {
+  width: 250px;
+  height: 300px;
+}
+
+.presentation button {
+  background-color: #3882F6;
+  border: none;
+  border-radius: 7px;
+  font-size: 15px;
+  color: #F9FAF8;
+  font-weight: 900;
+  padding: 7px 25px;
+}
