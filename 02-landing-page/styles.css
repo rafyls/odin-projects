@@ -151,3 +151,37 @@ ul {
   font-weight: bold;
   margin: 20px 200px 75px;
 }
+
+.section-action {
+  margin: 75px 200px;
+  background-color: #3882F6;
+  border-radius: 7px;
+  padding: 35px 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+}
+
+#action-1 {
+  font-size: 24px;
+  color: #F9FAF8;
+  font-weight: 800;
+  margin: 0 0 5px 0;
+}
+
+#action-2 {
+  font-size: 15px;
+  color: #F9FAF8;
+  margin: 0;  
+}
+
+.section-action button {
+  background-color: #3882F6;
+  border: #F9FAF8 solid 2px;
+  border-radius: 7px;
+  font-size: 15px;
+  color: #F9FAF8;
+  font-weight: 900;
+  padding: 7px 25px;
+}
