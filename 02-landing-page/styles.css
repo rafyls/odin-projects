@@ -37,7 +37,8 @@ a {
 }
 
 .section-header a,
-.presentation #hero-secondary {
+.presentation #hero-secondary,
+.container-card p  {
   font-size: 18px;
   color: #E5E7EB;
 }
@@ -83,4 +84,50 @@ ul {
   color: #F9FAF8;
   font-weight: 900;
   padding: 7px 25px;
+}
+
+.section-information {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 225px;
+}
+
+.section-information #information-text {
+  font-size: 36px;
+  color: #1F2937;
+  font-weight: 900;
+  margin: 25px auto;
+}
+
+.cards {
+  display: flex;
+  margin: 0;
+}
+
+.cards p,
+.cards img {
+  flex: 0 1 auto;
+}
+
+.img-card {
+  width: 150px;
+  height: 150px;
+  border: solid #3882F6 3px;
+  border-radius: 7px;
+}
+
+.container-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 25px;
+  padding: 0;
+}
+
+.container-card p {
+  font-size: 18px;
+  color: #5f6065;
+  margin: 15px auto;
 }
