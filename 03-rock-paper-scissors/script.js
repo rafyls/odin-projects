@@ -10,3 +10,8 @@ function getComputerChoice() {
     return "scissors";
   }
 }
+
+function getHumanChoice() {
+  let choice = prompt("Enter your choice:");
+  return choice; // Assumption: the user choice is always correct
+}
