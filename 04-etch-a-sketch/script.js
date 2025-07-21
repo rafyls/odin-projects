@@ -30,7 +30,9 @@ for (let i = 1; i <= INITIAL_GRID_SIZE; i++) {
 const divItems = document.querySelectorAll("#container .div-item");
 divItems.forEach((item) => {
   item.addEventListener("mouseover", () => {
-    item.style.backgroundColor = "black";
+    const colors = randomizeRGBColor();
+    const backgroundColor = "rgb("+ colors[0].toString() + "," + colors[1].toString() + "," + colors[2].toString() + ")";
+    item.style.backgroundColor = backgroundColor;
   });
 });
 
@@ -75,6 +77,21 @@ function generateGrid(numSquares) {
   }
 }
 
+function getRandomIntInclusive(min, max) {
+  const minCeiled = Math.ceil(min);
+  const maxFloored = Math.floor(max);
+  return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled); 
+}
+
+function randomizeRGBColor() {
+  const redColor = getRandomIntInclusive(0, 255);
+  const greenColor = getRandomIntInclusive(0, 255);
+  const blueColor = getRandomIntInclusive(0, 255);
+
+  const result = [redColor, greenColor, blueColor];
+  return result;
+}
+
 const btn = document.querySelector("#new-grid-btn");
 btn.addEventListener("click", () => {
   
@@ -90,7 +107,9 @@ btn.addEventListener("click", () => {
   const divItems = document.querySelectorAll("#container .div-item");
   divItems.forEach((item) => {
     item.addEventListener("mouseover", () => {
-      item.style.backgroundColor = "black";
+      const colors = randomizeRGBColor();
+      const backgroundColor = "rgb("+ colors[0].toString() + "," + colors[1].toString() + "," + colors[2].toString() + ")";
+      item.style.backgroundColor = backgroundColor;
     });
   });
 });
