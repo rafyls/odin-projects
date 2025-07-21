@@ -7,7 +7,7 @@ for (let i = 1; i <= 256; i++) {
   if (((i % 16) === 1) && (i != 1)) {
     const divItemInvisible = document.createElement("div");
 
-    divItem.classList.add("div-item-invisible");
+    divItemInvisible.classList.add("div-item-invisible");
 
     divItemInvisible.style.width = "100%";
     divItemInvisible.style.height = "0";
