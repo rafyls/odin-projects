@@ -17,3 +17,10 @@ for (let i = 1; i <= 256; i++) {
 
   container.appendChild(divItem);
 }
+
+const divItems = document.querySelectorAll("#container .div-item");
+divItems.forEach((item) => {
+  item.addEventListener("mouseover", () => {
+    item.style.backgroundColor = "black";
+  });
+});
