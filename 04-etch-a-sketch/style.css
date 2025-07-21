@@ -11,10 +11,10 @@ html {
 #container {
   display: flex;
   flex-wrap: wrap;
+  width: 450px;
+  height: 450px;
 }
 
 .div-item {
   border: 1px solid black;
-  width: 25px;
-  height: 25px;
 }
