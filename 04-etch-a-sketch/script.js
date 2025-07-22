@@ -24,6 +24,8 @@ for (let i = 1; i <= INITIAL_GRID_SIZE; i++) {
   divItem.style.width = widthContainer.toString() + "px";
   divItem.style.height = heightContainer.toString() + "px";
 
+  divItem.style.backgroundColor = "rgb(255, 255, 255)";
+
   container.appendChild(divItem);
 }
 
@@ -36,7 +38,7 @@ divItems.forEach((item) => {
   });
 });
 
-function resetGrid() {
+function deleteGrid() {
   const divItems = document.querySelectorAll("#container .div-item");
   divItems.forEach((item) => {
     container.removeChild(item);
@@ -73,6 +75,7 @@ function generateGrid(numSquares) {
       divItem.style.width = widthContainer.toString() + "px";
       divItem.style.height = heightContainer.toString() + "px";
 
+      divItem.style.backgroundColor = "rgb(255, 255, 255)";
     container.appendChild(divItem);
   }
 }
@@ -100,7 +103,7 @@ btn.addEventListener("click", () => {
     userInput = prompt("Enter the number of squares per side for the new grid (max. 100 squares)");
   } while (userInput > 100);
 
-  resetGrid();
+  deleteGrid();
 
   generateGrid(userInput);
 
@@ -112,4 +115,16 @@ btn.addEventListener("click", () => {
       item.style.backgroundColor = backgroundColor;
     });
   });
+});
+
+function resetGrid() {
+  const divItems = document.querySelectorAll("#container .div-item");
+  divItems.forEach((item) => {
+    item.style.backgroundColor = "rgb(255, 255, 255)";
+  });
+}
+
+const resetBtn = document.querySelector("#reset-btn");
+resetBtn.addEventListener("click", () => {
+  resetGrid();
 });
