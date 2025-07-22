@@ -1,0 +1,36 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: whitesmoke;
+}
+
+#container-btn {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin: 10px;
+}
+
+#container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 800px;
+  height: 800px;
+  margin: 30px;
+}
+
+.div-item {
+  border: 1px solid black;
+}
