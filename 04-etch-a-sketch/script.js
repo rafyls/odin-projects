@@ -1,42 +1,32 @@
 const container = document.querySelector("#container");
 
 const INITIAL_NUM_SQUARES = 16;
-const INITIAL_GRID_SIZE = 256
+const INITIAL_GRID_SIZE = 256;
 
-for (let i = 1; i <= INITIAL_GRID_SIZE; i++) {
-  const divItem = document.createElement("div");
-  divItem.classList.add("div-item");
-  
-  if (((i % 16) === 1) && (i != 1)) {
-    const divItemInvisible = document.createElement("div");
+const initialWidthContainer = (container.offsetWidth) / INITIAL_NUM_SQUARES;
+const initialHeightContainer = (container.offsetHeight) / INITIAL_NUM_SQUARES;
 
-    divItemInvisible.classList.add("div-item-invisible");
-
-    divItemInvisible.style.width = "100%";
-    divItemInvisible.style.height = "0";
-
-    container.appendChild(divItemInvisible);
-  }
-
-  const widthContainer = (container.offsetWidth) / INITIAL_NUM_SQUARES;
-  const heightContainer = (container.offsetHeight) / INITIAL_NUM_SQUARES;
-
-  divItem.style.width = widthContainer.toString() + "px";
-  divItem.style.height = heightContainer.toString() + "px";
-
-  divItem.style.backgroundColor = "rgb(255, 255, 255)";
-
-  container.appendChild(divItem);
+function getRandomIntInclusive(min, max) {
+  const minCeiled = Math.ceil(min);
+  const maxFloored = Math.floor(max);
+  return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled); 
 }
 
-const divItems = document.querySelectorAll("#container .div-item");
-divItems.forEach((item) => {
-  item.addEventListener("mouseover", () => {
-    const colors = randomizeRGBColor();
-    const backgroundColor = "rgb("+ colors[0].toString() + "," + colors[1].toString() + "," + colors[2].toString() + ")";
-    item.style.backgroundColor = backgroundColor;
+function randomizeRGBColor() {
+  const redColor = getRandomIntInclusive(0, 255);
+  const greenColor = getRandomIntInclusive(0, 255);
+  const blueColor = getRandomIntInclusive(0, 255);
+
+  const result = [redColor, greenColor, blueColor];
+  return result;
+}
+
+function resetGrid() {
+  const divItems = document.querySelectorAll("#container .div-item");
+  divItems.forEach((item) => {
+    item.style.backgroundColor = "rgb(255, 255, 255)";
   });
-});
+}
 
 function deleteGrid() {
   const divItems = document.querySelectorAll("#container .div-item");
@@ -72,28 +62,45 @@ function generateGrid(numSquares) {
       container.appendChild(divItemInvisible);
     }
 
-      divItem.style.width = widthContainer.toString() + "px";
-      divItem.style.height = heightContainer.toString() + "px";
+    divItem.style.width = widthContainer.toString() + "px";
+    divItem.style.height = heightContainer.toString() + "px";
 
-      divItem.style.backgroundColor = "rgb(255, 255, 255)";
+    divItem.style.backgroundColor = "rgb(255, 255, 255)";
     container.appendChild(divItem);
   }
 }
 
-function getRandomIntInclusive(min, max) {
-  const minCeiled = Math.ceil(min);
-  const maxFloored = Math.floor(max);
-  return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled); 
+for (let i = 1; i <= INITIAL_GRID_SIZE; i++) {
+  const divItem = document.createElement("div");
+  divItem.classList.add("div-item");
+  
+  if (((i % 16) === 1) && (i != 1)) {
+    const divItemInvisible = document.createElement("div");
+
+    divItemInvisible.classList.add("div-item-invisible");
+
+    divItemInvisible.style.width = "100%";
+    divItemInvisible.style.height = "0";
+
+    container.appendChild(divItemInvisible);
+  }
+
+  divItem.style.width = initialWidthContainer.toString() + "px";
+  divItem.style.height = initialHeightContainer.toString() + "px";
+
+  divItem.style.backgroundColor = "rgb(255, 255, 255)";
+
+  container.appendChild(divItem);
 }
 
-function randomizeRGBColor() {
-  const redColor = getRandomIntInclusive(0, 255);
-  const greenColor = getRandomIntInclusive(0, 255);
-  const blueColor = getRandomIntInclusive(0, 255);
-
-  const result = [redColor, greenColor, blueColor];
-  return result;
-}
+const divItems = document.querySelectorAll("#container .div-item");
+divItems.forEach((item) => {
+  item.addEventListener("mouseover", () => {
+    const colors = randomizeRGBColor();
+    const backgroundColor = "rgb("+ colors[0].toString() + "," + colors[1].toString() + "," + colors[2].toString() + ")";
+    item.style.backgroundColor = backgroundColor;
+  });
+});
 
 const btn = document.querySelector("#new-grid-btn");
 btn.addEventListener("click", () => {
@@ -116,13 +123,6 @@ btn.addEventListener("click", () => {
     });
   });
 });
-
-function resetGrid() {
-  const divItems = document.querySelectorAll("#container .div-item");
-  divItems.forEach((item) => {
-    item.style.backgroundColor = "rgb(255, 255, 255)";
-  });
-}
 
 const resetBtn = document.querySelector("#reset-btn");
 resetBtn.addEventListener("click", () => {
