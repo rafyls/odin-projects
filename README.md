@@ -6,3 +6,6 @@ Projects built while studying The Odin Project curriculum.
 
 **Rock Paper Scissors Project** ([README.md](./03-rock-paper-scissors/README.md)):
 - https://rafyls.github.io/odin-projects/03-rock-paper-scissors/
+
+**Etch-A-Sketch Project** ([README.md](./04-etch-a-sketch/README.md)):
+- https://rafyls.github.io/odin-projects/04-etch-a-sketch
