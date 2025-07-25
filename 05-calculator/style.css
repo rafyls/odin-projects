@@ -20,3 +20,37 @@ body {
 h1 {
   font-weight: 600;
 }
+
+.clear-btn,
+.digit-btn,
+.add-btn,
+.subtract-btn,
+.multiply-btn,
+.divide-btn,
+.decimal-sep-btn,
+.percent-btn,
+.equal-btn {
+  font-family: "Inter", sans-serif;
+  font-size: 26px;
+  color: rgb(38, 30, 30);
+  padding: 5px 20px;
+  background-color: rgb(248, 248, 248);
+  border: 1px solid rgb(38, 30, 30);
+  border-radius: 3px;
+  width: 60px;
+  height: 50px;
+}
+
+.digit-btn {
+  font-weight: bold;
+}
+
+.clear-btn {
+  background-color:rgb(226, 35, 35);
+  color: rgb(255, 255, 255);
+}
+
+.equal-btn {
+  background-color: rgb(65, 165, 65);
+  color: rgb(255, 255, 255);
+}
