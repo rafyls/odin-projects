@@ -55,6 +55,24 @@ h1 {
   color: rgb(255, 255, 255);
 }
 
+.digit-btn:active,
+.add-btn:active,
+.subtract-btn:active,
+.multiply-btn:active,
+.divide-btn:active,
+.decimal-sep-btn:active,
+.percent-btn:active {
+  background-color: rgb(225, 225, 225);
+}
+
+.clear-btn:active {
+  background-color: rgb(195, 25, 25);
+}
+
+.equal-btn:active {
+  background-color: rgb(50, 120, 50);
+}
+
 .container {
   border: 1px solid rgb(38, 30, 30);
   border-radius: 7px;
