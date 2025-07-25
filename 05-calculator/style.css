@@ -55,11 +55,14 @@ h1 {
   color: rgb(255, 255, 255);
 }
 
+.add-btn:focus,
+.subtract-btn:focus,
+.multiply-btn:focus,
+.divide-btn:focus {
+  background-color: rgb(225, 225, 225);
+}
+
 .digit-btn:active,
-.add-btn:active,
-.subtract-btn:active,
-.multiply-btn:active,
-.divide-btn:active,
 .decimal-sep-btn:active,
 .percent-btn:active {
   background-color: rgb(225, 225, 225);
