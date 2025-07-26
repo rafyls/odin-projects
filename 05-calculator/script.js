@@ -162,5 +162,9 @@ equalButton.addEventListener("click", () => {
 });
 
 clearButton.addEventListener("click", () => {
-    alert(clearButton.textContent);
+  operand1 = null;
+  operand2 = null;
+  lastOperation = null;
+  displayParagraph.textContent = "0";
+  firstDigitClick = true;
 });
