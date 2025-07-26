@@ -15,6 +15,7 @@ const displayParagraph = document.querySelector(".display p");
 
 let firstDigitClick = true;
 let firstDecimalSepClick = true;
+let newResult = false;
 
 function numberOfDecimalSep() {
   const number = displayParagraph.textContent.split("");
@@ -32,8 +33,9 @@ function numberOfDecimalSep() {
 digitButtons.forEach((digitButton) => {
   digitButton.addEventListener("click", () => {
 
-    if (firstDigitClick) {
+    if (firstDigitClick || newResult) {
       firstDigitClick = false;
+      newResult = false;
 
       displayParagraph.textContent = "";
       
@@ -74,7 +76,20 @@ operatorButtons.forEach((operatorButton) => {
 });
 
 percentageButton.addEventListener("click", () => {
-    alert(percentageButton.textContent);
+  value = Number.parseFloat(displayParagraph.textContent);
+  
+  let percentageValue = value / 100;
+
+  displayParagraph.textContent = "";
+  displayParagraph.textContent = percentageValue.toString();
+  
+  newResult = true;
+
+  if ((operand1 === null) || (lastOperation === null)) {
+    operand1 = percentageValue;
+  } else {
+    operand2 = percentageValue;
+  }
 });
 
 equalButton.addEventListener("click", () => {
