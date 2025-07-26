@@ -30,6 +30,30 @@ function numberOfDecimalSep() {
   return numDecimalSep;
 }
 
+function computeResult(op1, op2, op) {
+  let result = 0;
+
+  op = op.charCodeAt(0);
+
+  switch (op) {
+    case 43:  // Plus sign
+      result = op1 + op2;
+      break;
+    case 8722: // Minus sign
+      result = op1 - op2;
+      break;
+    case 215: // Multiplication sign
+      result = op1 * op2;
+      break;
+    case 247: // Division sign
+      result = op1 / op2;
+      break;
+    default:
+      break;
+  }
+  return result;
+}
+
 digitButtons.forEach((digitButton) => {
   digitButton.addEventListener("click", () => {
 
@@ -71,8 +95,32 @@ decimalSepButton.addEventListener("click", () => {
 
 operatorButtons.forEach((operatorButton) => {
   operatorButton.addEventListener("click", () => {
-    alert(operatorButton.textContent);
-  });
+    if (operand1 === null) {
+      operand1 = 0;
+    }
+
+    if (operand2 === null) {
+      lastOperation = operatorButton.textContent;
+      firstDigitClick = true;
+    } else {
+      let result = computeResult(operand1, operand2, lastOperation);
+      
+      if ((result === Infinity) || (result === -Infinity)) {
+        alert("Error: Division by 0 is impossible!");
+        operand1 = null;
+        operand2 = null;
+        lastOperation = null;
+      } else {
+        displayParagraph.textContent = "";
+        displayParagraph.textContent = result.toString();
+
+        operand1 = result;
+        operand2 = null;
+        lastOperation = operatorButton.textContent;
+      }
+      newResult = true;
+    } 
+  }); 
 });
 
 percentageButton.addEventListener("click", () => {
