@@ -141,7 +141,24 @@ percentageButton.addEventListener("click", () => {
 });
 
 equalButton.addEventListener("click", () => {
-    alert(equalButton.textContent);
+  if ((operand1 !== null) && (operand2 !== null)) {
+    let result = computeResult(operand1, operand2, lastOperation);
+      
+    if ((result === Infinity) || (result === -Infinity)) {
+      alert("Error: Division by 0 is impossible!");
+      operand1 = null;
+      operand2 = null;
+      lastOperation = null;
+    } else {
+      displayParagraph.textContent = "";
+      displayParagraph.textContent = result.toString();
+
+      operand1 = result;
+      operand2 = null;
+      lastOperation = null;
+    }
+    newResult = true;
+  }
 });
 
 clearButton.addEventListener("click", () => {
