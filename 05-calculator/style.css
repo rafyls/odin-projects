@@ -1,0 +1,117 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: snow;
+  font-family: "Inter", sans-serif;
+}
+
+h1 {
+  font-weight: 600;
+}
+
+.control-btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.clear-btn,
+.digit-btn,
+.add-btn,
+.subtract-btn,
+.multiply-btn,
+.divide-btn,
+.decimal-sep-btn,
+.percent-btn,
+.equal-btn,
+.backspace-btn {
+  font-family: "Inter", sans-serif;
+  font-size: 26px;
+  color: rgb(38, 30, 30);
+  padding: 5px 20px;
+  background-color: rgb(248, 248, 248);
+  border: 1px solid rgb(38, 30, 30);
+  border-radius: 3px;
+  width: 60px;
+  height: 50px;
+}
+
+.digit-btn {
+  font-weight: bold;
+}
+
+.clear-btn,
+.backspace-btn {
+  background-color:rgb(226, 35, 35);
+  color: rgb(255, 255, 255);
+}
+
+.backspace-btn {
+  font-size: 18px;
+}
+
+.equal-btn {
+  background-color: rgb(65, 165, 65);
+  color: rgb(255, 255, 255);
+}
+
+.add-btn:focus,
+.subtract-btn:focus,
+.multiply-btn:focus,
+.divide-btn:focus {
+  background-color: rgb(225, 225, 225);
+}
+
+.digit-btn:active,
+.decimal-sep-btn:active,
+.percent-btn:active {
+  background-color: rgb(225, 225, 225);
+}
+
+.clear-btn:active,
+.backspace-btn:active  {
+  background-color: rgb(195, 25, 25);
+}
+
+.equal-btn:active {
+  background-color: rgb(50, 120, 50);
+}
+
+.container {
+  border: 1px solid rgb(38, 30, 30);
+  border-radius: 7px;
+  padding: 20px;
+  background-color: rgb(240, 240, 240);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.display {
+  height: 70px;
+  border: 2px solid rgb(65, 60, 60);
+  border-radius: 7px;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.display p {
+  font-size: 24px;
+  margin: 0;
+  padding: 0 10px;
+}
