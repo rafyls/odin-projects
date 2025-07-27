@@ -47,7 +47,11 @@ function computeResult(op1, op2, op) {
       result = op1 * op2;
       break;
     case 247: // Division sign
-      result = op1 / op2;
+      if ((op1 === 0) || (op2 === 0)) {
+        result = null;
+      } else {
+        result = op1 / op2;
+      }
       break;
     default:
       break;
@@ -114,7 +118,7 @@ operatorButtons.forEach((operatorButton) => {
     } else {
       let result = computeResult(operand1, operand2, lastOperation);
       
-      if ((result === Infinity) || (result === -Infinity)) {
+      if (result === null) {
         alert("Error: Division by 0 is impossible!");
         operand1 = null;
         operand2 = null;
@@ -153,7 +157,7 @@ equalButton.addEventListener("click", () => {
   if ((operand1 !== null) && (operand2 !== null)) {
     let result = computeResult(operand1, operand2, lastOperation);
       
-    if ((result === Infinity) || (result === -Infinity)) {
+    if (result === null) {
       alert("Error: Division by 0 is impossible!");
       operand1 = null;
       operand2 = null;
