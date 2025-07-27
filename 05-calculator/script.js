@@ -16,6 +16,7 @@ const displayParagraph = document.querySelector(".display p");
 let firstDigitClick = true;
 let firstDecimalSepClick = true;
 let newResult = false;
+let displayCleared = false;
 
 function numberOfDecimalSep() {
   const number = displayParagraph.textContent.split("");
@@ -57,13 +58,24 @@ function computeResult(op1, op2, op) {
 digitButtons.forEach((digitButton) => {
   digitButton.addEventListener("click", () => {
 
-    if (firstDigitClick || newResult) {
+    if ((firstDigitClick || newResult)) {
       firstDigitClick = false;
       newResult = false;
 
-      displayParagraph.textContent = "";
-      
-      displayParagraph.textContent = displayParagraph.textContent + digitButton.textContent;
+      if (displayCleared) {
+        displayCleared = false;
+        if (displayParagraph.textContent === "0.") {
+          displayParagraph.textContent = displayParagraph.textContent + digitButton.textContent;
+        } else {
+          displayParagraph.textContent = "";
+        
+          displayParagraph.textContent = displayParagraph.textContent + digitButton.textContent;
+        }
+      } else {
+        displayParagraph.textContent = "";
+        
+        displayParagraph.textContent = displayParagraph.textContent + digitButton.textContent;
+      }
     } else {
       displayParagraph.textContent = displayParagraph.textContent + digitButton.textContent;
     }
@@ -85,9 +97,6 @@ decimalSepButton.addEventListener("click", () => {
 
     if (numDecimalSep === 0) {
       displayParagraph.textContent = displayParagraph.textContent + decimalSepButton.textContent;
-      decimalSepButton.disabled = false;
-    } else {
-      decimalSepButton.disabled = true;
     }
   }
 });
@@ -167,4 +176,7 @@ clearButton.addEventListener("click", () => {
   lastOperation = null;
   displayParagraph.textContent = "0";
   firstDigitClick = true;
+  firstDecimalSepClick = true;
+  newResult = false;
+  displayCleared = true;
 });
