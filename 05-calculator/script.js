@@ -8,6 +8,7 @@ const percentageButton = document.querySelector(".percent-btn");
 const operatorButtons = document.querySelectorAll(".operator-btn");
 const equalButton = document.querySelector(".equal-btn");
 const clearButton = document.querySelector(".clear-btn");
+const backspaceButton = document.querySelector(".backspace-btn");
 
 const display = document.querySelector(".display");
 
@@ -183,4 +184,22 @@ clearButton.addEventListener("click", () => {
   firstDecimalSepClick = true;
   newResult = false;
   displayCleared = true;
+});
+
+backspaceButton.addEventListener("click", () => {
+  let str = displayParagraph.textContent;
+  let newTextContent = str.substring(0, str.length - 1);
+
+  if (newTextContent !== "") {
+    displayParagraph.textContent = newTextContent;
+  } else {
+    displayParagraph.textContent = "0";
+    firstDigitClick = true;
+  }
+
+  if ((operand1 === null) || (lastOperation === null)) {
+    operand1 = Number.parseFloat(displayParagraph.textContent);
+  } else {
+    operand2 = Number.parseFloat(displayParagraph.textContent);
+  }
 });
