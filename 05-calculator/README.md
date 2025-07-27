@@ -8,3 +8,13 @@ This project implements a simple calculator that can perform the basic mathemati
 - &times; multiplication
 - &divide; division
 - % percentage
+
+The calculator, for the sake of simplicity and as mentioned in the project specification, does not evaluate more than a single pair of numbers at a time.
+
+The calculator supports a "clear" button to clear both the screen and its internal memory.
+
+It also supports a "backspace" button to delete one digit at a time from the right.
+
+**Example of calculator usage**:
+
+![Example of calculator usage](./example/calculator-usage-example.gif)
