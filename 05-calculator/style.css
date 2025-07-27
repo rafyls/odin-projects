@@ -21,6 +21,12 @@ h1 {
   font-weight: 600;
 }
 
+.control-btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .clear-btn,
 .digit-btn,
 .add-btn,
@@ -29,7 +35,8 @@ h1 {
 .divide-btn,
 .decimal-sep-btn,
 .percent-btn,
-.equal-btn {
+.equal-btn,
+.backspace-btn {
   font-family: "Inter", sans-serif;
   font-size: 26px;
   color: rgb(38, 30, 30);
@@ -45,9 +52,14 @@ h1 {
   font-weight: bold;
 }
 
-.clear-btn {
+.clear-btn,
+.backspace-btn {
   background-color:rgb(226, 35, 35);
   color: rgb(255, 255, 255);
+}
+
+.backspace-btn {
+  font-size: 18px;
 }
 
 .equal-btn {
@@ -68,7 +80,8 @@ h1 {
   background-color: rgb(225, 225, 225);
 }
 
-.clear-btn:active {
+.clear-btn:active,
+.backspace-btn:active  {
   background-color: rgb(195, 25, 25);
 }
 
