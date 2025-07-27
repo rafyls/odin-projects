@@ -9,3 +9,6 @@ Projects built while studying The Odin Project curriculum.
 
 **Etch-A-Sketch Project** ([README.md](./04-etch-a-sketch/README.md)):
 - https://rafyls.github.io/odin-projects/04-etch-a-sketch/
+
+**Calculator Project** ([README.md](./05-calculator/README.md)):
+- https://rafyls.github.io/odin-projects/05-calculator/
