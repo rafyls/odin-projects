@@ -126,7 +126,7 @@ operatorButtons.forEach((operatorButton) => {
         lastOperation = null;
       } else {
         displayParagraph.textContent = "";
-        displayParagraph.textContent = result.toString();
+        displayParagraph.textContent = result.toFixed(15);
 
         operand1 = result;
         operand2 = null;
@@ -143,7 +143,7 @@ percentageButton.addEventListener("click", () => {
   let percentageValue = value / 100;
 
   displayParagraph.textContent = "";
-  displayParagraph.textContent = percentageValue.toString();
+  displayParagraph.textContent = percentageValue.toFixed(15);
   
   newResult = true;
 
@@ -165,7 +165,7 @@ equalButton.addEventListener("click", () => {
       lastOperation = null;
     } else {
       displayParagraph.textContent = "";
-      displayParagraph.textContent = result.toString();
+      displayParagraph.textContent = result.toFixed(15);
 
       operand1 = result;
       operand2 = null;
