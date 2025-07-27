@@ -32,6 +32,11 @@ function numberOfDecimalSep() {
   return numDecimalSep;
 }
 
+function isFloat(num) {
+  return (typeof num === 'number') && (!Number.isInteger(num));
+}
+
+
 function computeResult(op1, op2, op) {
   let result = 0;
 
@@ -126,7 +131,12 @@ operatorButtons.forEach((operatorButton) => {
         lastOperation = null;
       } else {
         displayParagraph.textContent = "";
-        displayParagraph.textContent = result.toFixed(15);
+        
+        if (isFloat(result)) {
+        result = Math.round((result + Number.EPSILON) * 1000000000000000) / 1000000000000000;
+        } 
+      
+        displayParagraph.textContent = result.toString();
 
         operand1 = result;
         operand2 = null;
@@ -143,7 +153,12 @@ percentageButton.addEventListener("click", () => {
   let percentageValue = value / 100;
 
   displayParagraph.textContent = "";
-  displayParagraph.textContent = percentageValue.toFixed(15);
+
+  if (isFloat(percentageValue)) {
+    percentageValue = Math.round((percentageValue + Number.EPSILON) * 1000000000000000) / 1000000000000000;
+  }
+    
+  displayParagraph.textContent = percentageValue.toString();
   
   newResult = true;
 
@@ -165,7 +180,13 @@ equalButton.addEventListener("click", () => {
       lastOperation = null;
     } else {
       displayParagraph.textContent = "";
-      displayParagraph.textContent = result.toFixed(15);
+      
+      if (isFloat(result)) {
+        result = Math.round((result + Number.EPSILON) * 1000000000000000) / 1000000000000000;
+      } 
+      
+      displayParagraph.textContent = result.toString();
+
 
       operand1 = result;
       operand2 = null;
