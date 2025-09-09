@@ -1,4 +1,10 @@
 @font-face {
+    font-family: 'Wotfard';
+    src: url('./assets/fonts/Wotfard-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
   font-family: 'Norse';
   src: url('./assets/fonts/Norse-Bold.woff2') format('woff2');
   font-weight: bold;
@@ -21,6 +27,7 @@ html {
 
 body {
   display: flex;
+  font-family: 'Wotfard', system-ui, sans-serif;
 }
 
 #brgd-img-item {
