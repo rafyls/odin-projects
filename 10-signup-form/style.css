@@ -1,0 +1,27 @@
+:root {
+  --background-image-width: 415px;
+  --background-image-height: 100vh;
+}
+
+html {
+  box-sizing: border-box;
+  height: 100%;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  display: flex;
+}
+
+#brgd-img-item {
+  background-image: url(./assets/images/cars.jpg);
+  background-size: var(--background-image-width) var(--background-image-height);
+  background-position: left;
+  background-repeat: no-repeat;
+  opacity: 90%;
+  width: var(--background-image-width);
+  height: var(--background-image-height);
+}
