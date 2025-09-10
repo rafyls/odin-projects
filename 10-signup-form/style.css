@@ -28,6 +28,8 @@ html {
 body {
   display: flex;
   font-family: 'Wotfard', system-ui, sans-serif;
+  font-size: 12px;
+  background-color: rgb(249, 250, 251);
 }
 
 #brgd-img-item {
@@ -64,4 +66,39 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Norse', sans-serif;
+}
+
+#form-item > p {
+  font-size: 20px;
+  margin: 75px 50px;
+}
+
+#form-item > #p-small {
+  font-size: 16px;
+  margin: 10px 50px;
+}
+
+#p-small > a {
+  color: rgb(0, 86, 151);
+}
+
+form > fieldset {
+  border: 0;
+}
+
+form {
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0px 7px 10px -10px rgba(0, 0, 0, 0.81);
+  width: calc(100vw - var(--background-image-width));
+}
+
+button {
+  margin: 50px 50px 25px 50px;
+  color: white;
+  background-color: rgb(0, 86, 151);
+  padding: 10px 25px;
+  border-radius: 7px;
+  font-size: 16px;
+  border: 0;
+  box-shadow: 7px 7px 10px -8px rgba(0, 0, 0, 0.81);
 }
