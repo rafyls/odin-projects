@@ -102,3 +102,7 @@ button {
   border: 0;
   box-shadow: 7px 7px 10px -8px rgba(0, 0, 0, 0.81);
 }
+
+button:active {
+  background-color: rgb(30, 135, 215);
+}
