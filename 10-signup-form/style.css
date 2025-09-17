@@ -133,9 +133,23 @@ label {
   letter-spacing: 1.5px;
 }
 
+input[type="password"]:invalid {
+  border: 2px solid red;
+  border-radius: 4px;
+}
+
+input:focus {
+  outline: none;
+  border: 2px solid #4072c1;
+  border-radius: 4px;
+  box-shadow: 3px 3px 10px -5px rgba(0, 0, 0, 0.81);
+} 
+
 input {
   font-family: inherit;
   font-size: 15px;
   width: 220px;
   height: 25px;
+  border: 1px solid #898989;
+  border-radius: 4px;
 }
