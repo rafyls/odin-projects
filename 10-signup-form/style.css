@@ -70,7 +70,7 @@ body {
 
 #form-item > p {
   font-size: 20px;
-  margin: 75px 50px;
+  margin: 60px 50px;
 }
 
 #form-item > #p-small {
@@ -90,6 +90,7 @@ form {
   background-color: rgb(255, 255, 255);
   box-shadow: 0px 7px 10px -10px rgba(0, 0, 0, 0.81);
   width: calc(100vw - var(--background-image-width));
+  height: 250px;
 }
 
 button {
@@ -105,4 +106,36 @@ button {
 
 button:active {
   background-color: rgb(30, 135, 215);
+}
+
+h1 {
+  margin: 10px 35px;
+}
+
+.container-form {
+  display: flex;
+  margin: 25px 35px;
+  gap: 150px;
+}
+
+.container-input-col1 {
+  display: flex;
+  flex-direction: column;
+}
+
+.container-input-col2 {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-top: 15px;
+  letter-spacing: 1.5px;
+}
+
+input {
+  font-family: inherit;
+  font-size: 15px;
+  width: 220px;
+  height: 25px;
 }
