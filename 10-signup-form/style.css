@@ -101,7 +101,7 @@ button {
   border-radius: 7px;
   font-size: 16px;
   border: 0;
-  box-shadow: 7px 7px 10px -8px rgba(0, 0, 0, 0.81);
+  box-shadow: 5px 5px 10px -5px rgba(0, 0, 0, 0.81);
 }
 
 button:active {
