@@ -192,3 +192,30 @@ body {
   height: 55px;
   border-radius: 50%;
 }
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(150px, 1fr));
+  grid-template-rows: 1fr 1fr;
+  align-items: center;
+}
+
+.card-project {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  align-items: center;
+}
+
+.card-button {
+  display: grid;
+  grid-template-columns: 24px 24px 24px;
+  justify-content: flex-end;
+  column-gap: 17px;
+}
+
+.card-button svg {
+  width: 24px;
+  height: 24px;
+  fill: black;
+}
