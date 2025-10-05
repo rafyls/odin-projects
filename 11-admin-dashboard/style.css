@@ -26,6 +26,22 @@ body {
   grid-template-rows: 1fr 1fr;
   background-color: white;
   box-shadow: 0px 6px 15px -12px rgba(0, 0, 0, 0.81);
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px 10px;
+}
+
+#user-info {
+  margin: 0 25px;
+}
+
+#user-info-1 {
+  font-weight: 600;
+}
+
+#user-info-2 {
+  font-size: 22px;
+  font-weight: 600;
 }
 
 .sidebar {
@@ -130,14 +146,20 @@ body {
   grid-template-columns: 32px 1fr;
   justify-content: center;
   align-items: center;
+  column-gap: 20px;
 }
 
 .notify-flex {
   grid-row: 1 / 2;
   grid-column: 2 / 3;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
+  gap: 35px;
+}
+
+.notify-flex p {
+  font-weight: 600;
 }
 
 .user-info-grid {
@@ -145,11 +167,27 @@ body {
   grid-column: 1 / 2;
   display: grid;
   grid-template-columns: 85px 1fr;
+  justify-content: center;
+  align-items: center;
 }
 
 .user-buttons-flex {
   grid-row: 2 / 3;
   grid-column: 2 / 3;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.user-buttons-flex > button {
+  background-color: #1991d2;
+  margin: 25px;
+  color: #ffffff;
+  font-weight: 600;
+  border: 0;
+  margin: 10px;
+  padding: 10px 25px;
+  border-radius: 20px;
 }
 
 .projects {
