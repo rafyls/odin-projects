@@ -166,8 +166,8 @@ body {
   grid-row: 2 / 3;
   grid-column: 1 / 2;
   display: grid;
-  grid-template-columns: 85px 1fr;
-  justify-content: center;
+  grid-template-columns: 85px 1fr 1fr;
+  justify-content: flex-start;
   align-items: center;
 }
 
@@ -335,4 +335,13 @@ a:visited {
 
 a:hover {
   color: #1991d2;
+}
+
+.user-info-grid svg {
+  width: 55px;
+  height: 55px;
+}
+
+.user-info-grid svg:hover {
+  fill: #1991d2;
 }
