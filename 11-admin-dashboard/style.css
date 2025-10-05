@@ -1,0 +1,347 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: rgb(226, 232, 240);
+  font-family: "IBM Plex Sans", Roboto, sans-serif;
+  font-optical-sizing: auto;
+  font-weight: normal;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+  display: grid;
+  grid-template-columns: 285px 1fr;
+  grid-template-rows: 200px 1fr;
+}
+
+.header {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  background-color: white;
+  box-shadow: 0px 6px 15px -12px rgba(0, 0, 0, 0.81);
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px 10px;
+}
+
+#user-info {
+  margin: 0 25px;
+}
+
+#user-info-1 {
+  font-weight: 600;
+}
+
+#user-info-2 {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.sidebar {
+  grid-column: 1 / 2;
+  grid-row: 1 / 3;
+  display: grid;
+  grid-template-rows: 75px 350px 1fr;
+  row-gap: 70px;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 0 20px;
+  background-color: #1991d2;
+  color: white;
+  box-shadow: 6px 0px 15px -12px rgba(0, 0, 0, 0.81);
+}
+
+.main-content {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  display: grid;
+  grid-template-columns: 1fr 250px;
+  grid-template-rows: 1fr 1fr;
+}
+
+.sidebar p {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.sidebar svg {
+  width: 32px;
+  height: 32px;
+  fill: white;
+}
+
+.branding-grid svg {
+  width: 48px;
+  height: 48px;
+}
+
+.branding-grid {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  grid-template-rows: 1fr;
+  justify-content: center;
+  align-items: center;
+  column-gap: 10px;
+}
+
+.nav-grid-1 {
+  display: grid;
+  grid-template-columns: 32px 1fr;
+  grid-template-rows: repeat(6, 1fr);
+  justify-content: center;
+  align-items: center;
+  column-gap: 25px;
+}
+
+.nav-grid-2 {
+  display: grid;
+  grid-template-columns: 32px 1fr;
+  grid-template-rows: repeat(3, 1fr);
+  justify-content: center;
+  align-items: center;
+  column-gap: 25px;
+}
+
+.header svg {
+  width: 32px;
+  height: 32px;
+  fill: black;
+}
+
+#search-bar {
+  background-color: #e2e8f0;
+  border: 0;
+  border-radius: 20px;
+  height: 30px;
+  width: 475px;
+  font-size: 16px;
+  padding: 8px 10px;
+}
+
+.profile-image-1 {
+  background-image: url(./assets/images/rafyls-logo.jpeg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+}
+
+.user-info-grid > .profile-image-1 {
+  width: 85px;
+  height: 85px;
+}
+
+.search-grid { 
+  grid-row: 1 / 2;
+  grid-column: 1 / 2;
+  display: grid;
+  grid-template-columns: 32px 1fr;
+  justify-content: center;
+  align-items: center;
+  column-gap: 20px;
+}
+
+.notify-flex {
+  grid-row: 1 / 2;
+  grid-column: 2 / 3;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 35px;
+}
+
+.notify-flex p {
+  font-weight: 600;
+}
+
+.user-info-grid {
+  grid-row: 2 / 3;
+  grid-column: 1 / 2;
+  display: grid;
+  grid-template-columns: 85px 1fr 1fr;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.user-buttons-flex {
+  grid-row: 2 / 3;
+  grid-column: 2 / 3;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.user-buttons-flex > button {
+  background-color: #1991d2;
+  margin: 25px;
+  color: #ffffff;
+  font-weight: 600;
+  border: 0;
+  margin: 10px;
+  padding: 10px 25px;
+  border-radius: 20px;
+}
+
+.projects {
+  grid-row: 1 / 3;
+  grid-column: 1 / 2;
+}
+
+.announcements {
+  grid-row: 1 / 2;
+  grid-column: 2 / 3;
+  margin-right: 7px;
+}
+
+.trending {
+  grid-row: 2 / 3;
+  grid-column: 2 / 3;
+}
+
+.ann-sec {
+  background-color: #ffffff;
+  padding: 15px 25px;
+  border-radius: 10px;
+  box-shadow: 7px 7px 12px -10px rgba(0, 0, 0, 0.81);
+}
+
+.announcements div {
+  margin: 0 10px;
+}
+
+.announcements h2 {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.line-sep {
+  border: 1px solid black;
+}
+
+.trending-grid {
+  display: grid;
+  grid-template-columns: 55px 1fr;
+  grid-template-rows: 100px 100px 100px 100px;
+  background-color: #ffffff;
+  padding: 5px 25px;
+  border-radius: 10px;
+  column-gap: 10px;
+  justify-content: center;
+  align-items: center;
+  margin: 0 7px;
+  box-shadow: 7px 7px 12px -10px rgba(0, 0, 0, 0.81);
+}
+
+.trending-grid p {
+  margin: 7px 0;
+}
+
+.trending h2 {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.profile-name {
+  font-weight: 500;
+}
+
+.profile-name + p, .desc-projects, .desc-ann {
+  color: #404040
+}
+
+.profile-image-2 {
+  background-image: url(./assets/images/sun-logo.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+}
+
+.profile-image-3 {
+  background-image: url(./assets/images/galaxy-logo.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+}
+
+.profile-image-4 {
+  background-image: url(./assets/images/earth-logo.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+}
+
+.projects h2, .projects-grid {
+  margin: 25px 20px;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(150px, 1fr));
+  grid-template-rows: 1fr 1fr;
+  align-items: center;
+  column-gap: 15px;
+  row-gap: 30px;
+}
+
+.card-project {
+  display: grid;
+  height: 200px;
+  grid-template-columns: 1fr;
+  grid-template-rows: 50px 1fr;
+  align-items: center;
+  background-color: #ffffff;
+  border-left-style: solid;
+  border-left-width: 10px;
+  border-left-color: #f0b429;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 7px 7px 12px -10px rgba(0, 0, 0, 0.81);
+}
+
+.card-button {
+  display: grid;
+  grid-template-columns: 24px 24px 24px;
+  justify-content: flex-end;
+  column-gap: 17px;
+}
+
+.card-button svg {
+  width: 24px;
+  height: 24px;
+  fill: black;
+}
+
+.card-project h3 a {
+  text-decoration: underline;
+}
+
+a:visited {
+  color: black;
+}
+
+a:hover {
+  color: #1991d2;
+}
+
+.user-info-grid svg {
+  width: 55px;
+  height: 55px;
+}
+
+.user-info-grid svg:hover {
+  fill: #1991d2;
+}
