@@ -299,6 +299,7 @@ body {
 
 .card-project {
   display: grid;
+  height: 200px;
   grid-template-columns: 1fr;
   grid-template-rows: 50px 1fr;
   align-items: center;
@@ -322,4 +323,16 @@ body {
   width: 24px;
   height: 24px;
   fill: black;
+}
+
+.card-project h3 a {
+  text-decoration: underline;
+}
+
+a:visited {
+  color: black;
+}
+
+a:hover {
+  color: #1991d2;
 }
