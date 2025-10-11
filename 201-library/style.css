@@ -8,4 +8,12 @@ html {
 
 body {
   background-color: rgb(215, 235, 255);
+  font-family: Inter, system-ui, sans-serif;
+  font-size: 1.25rem;
+  line-height: 1.5;
+}
+
+img, svg, video {
+  max-width: 100%;
+  display: block;
 }
