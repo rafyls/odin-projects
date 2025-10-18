@@ -15,7 +15,7 @@
         <h1>Library</h1>
       </div>
       <div class="book-buttons">
-        <div class="button-container">
+        <div class="button-container" id="add-book-button">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="button-icon">
             <path d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" />
           </svg>
@@ -35,7 +35,35 @@
       </div>
     </div>
     <div id="main-content">
-
+      <dialog id="add-book-dialog">
+        <h2>Add New Book</h2>
+        <form method="dialog">
+          <p>
+            <label for="title">Title</label>
+            <input type="text" id="title">
+          </p>
+          <p>
+            <label for="author">Author</label>
+            <input type="text" id="author">
+          </p>
+          <p>
+            <label for="num-pages">Number of pages</label>
+            <input type="number" id="num-pages" min="1">
+          </p>
+          <p>
+            <label for="isbn">ISBN</label>
+            <input type="text" id="isbn">
+          </p>
+          <p>
+            <label for="category">Category</label>
+            <input type="text" id="category">
+          </p>
+          <div>
+            <button type="reset" id="cancel-btn-dialog" formmethod="dialog" value="cancel" autofocus>Cancel</button>
+            <button type="submit" id="confirm-btn-dialog" value="confirm">Save</button>
+          </div>
+        </form>
+      </dialog>
     </div>
     <script src="./script.js"></script>
   </body>
