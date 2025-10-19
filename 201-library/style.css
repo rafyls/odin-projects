@@ -94,8 +94,8 @@ img, svg, video {
 /* ---Main Content --- */
 #main-content {
   display: grid;
-  grid-template-columns: repeat(3, 250px);
-  grid-auto-rows: 350px;
+  grid-template-columns: repeat(3, 300px);
+  grid-auto-rows: 450px;
   justify-content: center;
   row-gap: 25px;
   column-gap: 50px;
@@ -136,4 +136,68 @@ dialog button {
 
 dialog button:active {
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.85);
+}
+
+/* --- Book card --- */
+.book-card {
+  width: 300px;
+  height: 450px;
+  border-radius: 15px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.50);
+  border-left: 10px solid rgb(15, 150, 15);
+  background-color: white;
+  padding: 10px 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.book-card h3 {
+  font-size: 26px;
+}
+
+.book-card .hr {
+  border: 1px solid rgba(0, 0, 0, 0.35);
+}
+
+.book-infos {
+  display: flex;
+  flex-direction: column;
+}
+
+.book-card button {
+  background-color: white;
+  border: 3px solid rgb(15, 150, 15);
+  width: 45px;
+  height: 45px;
+  border-radius: 10px;
+  padding: 7px 7px;
+  align-self: flex-end;
+}
+
+.book-card button:active {
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.85);
+}
+
+.book-card button svg {
+  width: 25px;
+  height: 25px;
+  fill: rgb(15, 150, 15);
+}
+
+.book-infos div {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+}
+
+.book-infos p {
+  color: rgba(0, 0, 0, 0.65);
+}
+
+.book-infos svg {
+  width: 27px;
+  height: 27px;
+  fill: rgb(15, 150, 15);
 }
