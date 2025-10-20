@@ -22,3 +22,8 @@ Projects built while studying The Odin Project curriculum.
 
 **11 Admin Dashboard Project** ([README.md](./11-admin-dashboard/README.md)):
 - https://rafyls.github.io/odin-projects/11-admin-dashboard/
+
+## JavaScript Course Projects
+
+**201 Library Project** ([README.md](./201-library/README.md)):
+- https://rafyls.github.io/odin-projects/201-library/
