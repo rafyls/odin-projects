@@ -130,8 +130,12 @@ function displayBook(book) {
 
   cardBook.appendChild(cardInfos);
 
+  const buttonContainer = document.createElement("div");
+  buttonContainer.setAttribute("class", "container-btn");
+
   const deleteButton = document.createElement("button");
-  deleteButton.setAttribute("type", "button")
+  deleteButton.setAttribute("type", "button");
+  deleteButton.setAttribute("class", "delete-book-btn");
   const deleteSvg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
   deleteSvg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
   deleteSvg.setAttribute("viewBox", "0 0 24 24");
@@ -139,7 +143,25 @@ function displayBook(book) {
   svgPath5.setAttribute("d", "M19,4H15.5L14.5,3H9.5L8.5,4H5V6H19M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19Z");
   deleteSvg.appendChild(svgPath5);
   deleteButton.appendChild(deleteSvg);
-  cardBook.appendChild(deleteButton);
+
+  const readButton = document.createElement("button");
+  readButton.setAttribute("type", "button");
+  readButton.setAttribute("class", "read-book-btn");
+  const readSvg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+  readSvg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
+  readSvg.setAttribute("viewBox", "0 0 24 24");
+  const svgPath6 = document.createElementNS("http://www.w3.org/2000/svg", "path");
+  svgPath6.setAttribute("d", "M12 2C6.5 2 2 6.5 2 12S6.5 22 12 22 22 17.5 22 12 17.5 2 12 2M10 17L5 12L6.41 10.59L10 14.17L17.59 6.58L19 8L10 17Z");
+  readSvg.appendChild(svgPath6);
+  readButton.appendChild(readSvg);
+  const readStatus = document.createElement("p");
+  readStatus.textContent = "Unread";
+  readStatus.style.color = "rgba(0, 0, 0, 0.65)";
+  
+  buttonContainer.appendChild(readButton);
+  buttonContainer.appendChild(readStatus);
+  buttonContainer.appendChild(deleteButton);
+  cardBook.appendChild(buttonContainer);
 
   mainContent.appendChild(cardBook);
 
@@ -150,6 +172,20 @@ function displayBook(book) {
         element.removeChild(element.firstChild);
       }
       mainContent.removeChild(cardBook);
+    }
+  });
+
+  readButton.addEventListener("click", () => {
+    if (!book.read) {
+      book.read = true;
+      icon = readButton.querySelector("svg");
+      icon.style.fill = "rgb(15, 150, 15)";
+      readStatus.textContent = "Read";
+    } else {
+      book.read = false;
+      icon = readButton.querySelector("svg");
+      icon.style.fill = "rgba(0, 0, 0, 0.35)";
+      readStatus.textContent = "Unread";
     }
   });
 }

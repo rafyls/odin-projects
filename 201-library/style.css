@@ -165,24 +165,45 @@ dialog button:active {
   flex-direction: column;
 }
 
-.book-card button {
+.container-btn {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+}
+
+.book-card .delete-book-btn {
   background-color: white;
   border: 3px solid rgb(15, 150, 15);
   width: 45px;
   height: 45px;
   border-radius: 10px;
   padding: 7px 7px;
-  align-self: flex-end;
+  margin-left: auto;
 }
 
-.book-card button:active {
+.book-card .delete-book-btn:active {
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.85);
 }
 
-.book-card button svg {
+.book-card .delete-book-btn svg {
   width: 25px;
   height: 25px;
   fill: rgb(15, 150, 15);
+}
+
+.book-card .read-book-btn {
+  background-color: white;
+  border: none;
+  width: 45px;
+  height: 45px;
+  padding: 0;
+}
+
+.book-card .read-book-btn svg {
+  width: 30px;
+  height: 30px;
+  fill: rgba(0, 0, 0, 0.35);
 }
 
 .book-infos div {
