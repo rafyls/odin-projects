@@ -142,4 +142,14 @@ function displayBook(book) {
   cardBook.appendChild(deleteButton);
 
   mainContent.appendChild(cardBook);
+
+  deleteButton.addEventListener("click", () => {
+    if (cardBook) {
+      const element = cardBook;
+      while (element.firstChild) {
+        element.removeChild(element.firstChild);
+      }
+      mainContent.removeChild(cardBook);
+    }
+  });
 }
