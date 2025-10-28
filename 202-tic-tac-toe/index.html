@@ -8,6 +8,17 @@
   </head>
   <body>
     <h1>Tic Tac Toe</h1>
-    <script src="./script.js"></script>
+    <form class="start-container">
+      <div class="player1-info">
+        <label for="player1-name">Player 1 (X): Enter your name:</label>
+        <input type="text" id="player1-name" minlength="1" maxlength="25" required>
+      </div>
+      <div class="player2-info">
+        <label for="player2-name">Player 2 (O): Enter your name:</label>
+        <input type="text" id="player2-name" minlength="1" maxlength="25" required>
+      </div>
+      <button id="start-button" type="submit">Start</button>
+    </form>
+  <!-- <script src="./script.js"></script> -->
   </body>
 </html>
