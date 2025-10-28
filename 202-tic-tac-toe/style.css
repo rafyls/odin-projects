@@ -74,3 +74,48 @@ h1 {
 #start-button:active {
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.50);
 }
+
+/* --- Game Page --- */
+/* --- Header --- */
+#restart-button {
+  position: absolute;
+  top: 35px;
+  right: 70px;
+  background-color: #004e78;
+  border: none;
+  color: #fdfdfd;
+  height: 45px;
+  padding: 7px 20px;
+  font-size: 24px;
+  border-radius: 10px;
+}
+
+#restart-button:active {
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.50);
+}
+
+.player-turn {
+  color: #004e78;
+  font-size: 28px;
+  margin: 5px 0;
+}
+
+/* --- Game Board --- */
+.gameboard-container {
+  display: grid;
+  grid-template-columns: repeat(3, 120px);
+  grid-template-rows: repeat(3, 120px);
+  margin-top: 20px;
+  background-color: #fdfdfd;
+}
+
+.gameboard-cell {
+  width: 120px;
+  height: 120px;
+  border: 2px solid #004e78;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 85px;
+  color: #004e78;
+}
