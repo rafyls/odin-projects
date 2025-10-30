@@ -27,3 +27,6 @@ Projects built while studying The Odin Project curriculum.
 
 **201 Library Project** ([README.md](./201-library/README.md)):
 - https://rafyls.github.io/odin-projects/201-library/
+
+**202 Tic Tac Toe** ([README.md](./202-tic-tac-toe/README.md)):
+- https://rafyls.github.io/odin-projects/202-tic-tac-toe/
