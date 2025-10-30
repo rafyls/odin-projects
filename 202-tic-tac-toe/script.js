@@ -1,12 +1,18 @@
+let player1Name;
+let player2Name;
+
 const form = document.querySelector(".start-container");
 form.addEventListener("submit", (event) => {
   event.preventDefault();
 
-  const player1Name = document.querySelector("#player1-name");
-  const player2Name = document.querySelector("#player2-name");
+  const player1NameInput = document.querySelector("#player1-name");
+  const player2NameInput = document.querySelector("#player2-name");
+
+  player1Name = player1NameInput.value;
+  player2Name = player2NameInput.value;
 
   // Start the game
-  DisplayController.displayGamePage(player1Name.value, player2Name.value);
+  DisplayController.displayGamePage();
 });
 
 const DisplayController = (function () {
@@ -20,7 +26,7 @@ const DisplayController = (function () {
   let cells = [];
   cells[0] = null;
 
-  let playerName1, playerName2;
+  let gc = null;
 
   function displayGameBoard() {
     gameboard = document.createElement("div");
@@ -36,10 +42,7 @@ const DisplayController = (function () {
     return gameboard;
   }
 
-  const displayGamePage = (player1Name, player2Name) => {
-    playerName1 = player1Name;
-    playerName2 = player2Name;
-
+  const displayGamePage = () => {
     body = document.getElementById("site-content");
     while (body.firstChild) {
       body.removeChild(body.firstChild);
@@ -54,6 +57,11 @@ const DisplayController = (function () {
     restartButton.setAttribute("id", "restart-button");
     restartButton.textContent = "Restart";
     body.appendChild(restartButton);
+
+    restartButton.addEventListener("click", () => {
+      // Restart the game
+      DisplayController.displayGamePage();
+    });
 
     playerTurn = document.createElement("p");
     playerTurn.setAttribute("class", "player-turn");
@@ -80,17 +88,18 @@ const DisplayController = (function () {
 
     body.appendChild(displayGameBoard());
 
-    GameController.startGame(player1Name, player2Name, cells);
+    gc = GameController();
+    gc.startGame(cells);
   };
 
   const updateGameBoard = (cellValue, cellNum, plName) => {
     if (cells[cellNum].textContent === "") {
       cells[cellNum].textContent = cellValue;
-      if (plName === playerName1) {
-        playerName.textContent = playerName2;
+      if (plName === player1Name) {
+        playerName.textContent = player2Name;
         playerSym.textContent = 'O';
       } else {
-        playerName.textContent = playerName1;
+        playerName.textContent = player1Name;
         playerSym.textContent = 'X';
       }
       return true;
@@ -211,28 +220,25 @@ const DisplayController = (function () {
   const printResult = (state, plName) => {
     if (state !== 'TIE') {
       playerTurn.textContent = plName + " won the game!";
-      GameController.finishGame();
+      gc.finishGame();
     } else {
       playerTurn.textContent = "TIE!";
-      GameController.finishGame();
+      gc.finishGame();
     }
   };
 
   return {displayGamePage, updateGameBoard, checkGameBoard, printResult};
 })();
 
-const GameController = (function () {
+function GameController() {
   let playerTurn;
   let numTurns = 0;
-  let player1Name, player2Name;
 
   let cells = null;
   let binders = [];
 
-  const startGame = (p1Name, p2Name, cs) => {
-    playerTurn = p1Name;
-    player1Name = p1Name;
-    player2Name = p2Name;
+  const startGame = (cs) => {
+    playerTurn = player1Name;
     cells = cs;
 
     for (let i = 1; i < 10; i++) {
@@ -285,4 +291,4 @@ const GameController = (function () {
   }
 
   return {startGame, finishGame};
-})();
+}
