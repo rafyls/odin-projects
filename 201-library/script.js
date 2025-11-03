@@ -35,14 +35,16 @@ addBookForm.addEventListener("submit", () => {
 const myLibrary = [];
 const mainContent = document.querySelector("#main-content");
 
-function Book(id, title, author, nump, isbn, cat, isread) {
-  this.id = id
-  this.title = title;
-  this.author = author;
-  this.numpages= nump;
-  this.isbn = isbn;
-  this.category = cat;
-  this.read = isread;
+class Book {
+  constructor(id, title, author, nump, isbn, cat, isread) {
+    this.id = id;
+    this.title = title;
+    this.author = author;
+    this.numpages = nump;
+    this.isbn = isbn;
+    this.category = cat;
+    this.read = isread;
+  }
 }
 
 function addBookToLibrary(formValues) {
