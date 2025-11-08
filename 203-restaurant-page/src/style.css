@@ -1,0 +1,54 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  background: url(./assets/img/napoli.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: Inter, system-ui, sans-serif;
+  font-size: 1.25rem;
+  color: #fefefe;
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 150px;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.35);
+  z-index: -1;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header button {
+  width: 200px;
+  height: 35px;
+  border: none;
+  border-radius: 5px;
+  background-color: #ff992d;
+  font-size: 18px;
+}
+
+header button:active {
+  border: 1px solid black;
+}
+
+#content {
+  font-family: Rockwell, 'Rockwell Nova', 'Roboto Slab', 'DejaVu Serif', 'Sitka Small', serif;
+  text-align: center;
+}
