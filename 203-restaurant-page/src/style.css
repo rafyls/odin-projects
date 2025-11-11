@@ -86,6 +86,7 @@ header button:active {
 
 .pizza-menu div p:last-child {
   background-color: #FFC857;
+  font-family: 'Inter', sans-serif;
   color: black;
   font-weight: 600;
   align-self: flex-start;
@@ -119,6 +120,7 @@ header button:active {
 
 .dessert-menu div p:last-child {
   background-color: #FFC857;
+  font-family: 'Inter', sans-serif;
   color: black;
   font-weight: 600;
   align-self: flex-start;
