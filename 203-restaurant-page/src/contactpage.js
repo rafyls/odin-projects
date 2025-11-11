@@ -1,4 +1,7 @@
 function loadContactpage(content) {
+  const html = document.querySelector("html");
+  html.style.removeProperty('height');
+
   const divContact = document.createElement("div");
   divContact.classList.add("contact-info");
 

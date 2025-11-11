@@ -7,6 +7,9 @@ import cannoliImg from "./assets/img/cannoli.jpg";
 import pannaImg from "./assets/img/panna.jpg";
 
 function loadMenupage(content) {
+  const html = document.querySelector("html");
+  html.style.removeProperty('height');
+
   const divPizza = document.createElement("div");
   divPizza.classList.add("pizza-menu");
 

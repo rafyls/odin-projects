@@ -1,5 +1,8 @@
 function loadHomepage(content) {
 
+  const html = document.querySelector("html");
+  html.style.height = "100%";
+
   const h1 = document.createElement("h1");
   h1.textContent = "Napolia Pizza";
 
