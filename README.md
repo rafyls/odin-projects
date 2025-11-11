@@ -30,3 +30,6 @@ Projects built while studying The Odin Project curriculum.
 
 **202 Tic Tac Toe** ([README.md](./202-tic-tac-toe/README.md)):
 - https://rafyls.github.io/odin-projects/202-tic-tac-toe/
+
+**203 Restaurant Page** ([README.md](./203-restaurant-page/README.md)):
+- https://rafyls.github.io/odin-projects/203-restaurant-page/
