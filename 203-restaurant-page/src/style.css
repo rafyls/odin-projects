@@ -126,3 +126,32 @@ header button:active {
   border-radius: 20px;
   padding: 5px 15px;
 }
+
+.contact-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr repeat(2, 300px);
+  gap: 25px;
+}
+
+.contact-info h1 {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+.contact-info > div {
+  width: 500px;
+  height: 300px;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 17px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+}
+
+.schedule {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(3, 35px);
+}
