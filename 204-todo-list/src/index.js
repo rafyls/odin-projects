@@ -1,2 +1,2 @@
+import "./assets/css/normalize.css";
 import "./style.css";
-console.log("TickList");
