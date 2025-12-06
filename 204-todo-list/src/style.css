@@ -240,3 +240,12 @@ img, svg, video {
 .newTaskDialog-buttons > button:active {
   box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.85);
 }
+
+.newProjectDialog {
+  width: 330px;
+  height: 225px;
+}
+
+.newProjectDialog-buttons {
+  margin-top: 30px;
+}

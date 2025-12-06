@@ -27,7 +27,7 @@
     </div>
     <div class="mainContent">
       <h3 class="mainContent-projectName">Today</h3>
-      <dialog class="newTaskDialog" open>
+      <dialog class="newTaskDialog">
         <div class="newTaskDialog-heading">
           <h2>Add New Task</h2>
           <i class="fa-solid fa-circle-xmark fa-2x newTaskDialog-closeIcon"></i>
@@ -55,6 +55,20 @@
             </div>
           </div>
           <div class="newTaskDialog-buttons">
+            <button type="reset" class="newTaskDialog-buttonsCancel" value="cancel">Cancel</button>
+            <button type="submit" class="newTaskDialog-buttonsAdd" value="add">Add</button>
+          </div>
+        </form>
+      </dialog>
+      <dialog class="newTaskDialog newProjectDialog" open>
+        <div class="newTaskDialog-heading">
+          <h2>Add New Project</h2>
+          <i class="fa-solid fa-circle-xmark fa-2x newTaskDialog-closeIcon"></i>
+        </div>
+        <form class="newTaskDialog-form newProjectDialog-form" method="dialog">
+          <label for="title">Project Name</label>
+          <input type="text" id="title" required autofocus>
+          <div class="newTaskDialog-buttons newProjectDialog-buttons">
             <button type="reset" class="newTaskDialog-buttonsCancel" value="cancel">Cancel</button>
             <button type="submit" class="newTaskDialog-buttonsAdd" value="add">Add</button>
           </div>
