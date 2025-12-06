@@ -158,3 +158,85 @@ img, svg, video {
   align-items: center;
   gap: 7px;
 }
+
+.newTaskDialog {
+  width: 330px;
+  height: 475px;
+  padding: 10px 20px;
+  border: 2px solid black;
+  border-radius: 7px;
+}
+
+.newTaskDialog-heading {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 7px 0 15px 0;
+}
+
+.newTaskDialog-heading > h2 {
+  margin-right: auto;
+}
+
+.newTaskDialog-closeIcon:active {
+  text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.85);
+}
+
+.newTaskDialog-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.newTaskDialog-form > input[type="text"] {
+  width: 270px;
+  border: 1px solid black;
+  border-radius: 3px;
+  padding: 3px;
+}
+
+.newTaskDialog-form > textarea {
+  resize: none; 
+  width: 270px;
+  height: 55px;
+  border: 1px solid black;
+  border-radius: 3px;
+  padding: 3px;
+}
+
+.newTaskDialog-form > input[type="date"] {
+  width: 135px;
+}
+
+.newTaskDialog-radioGroup > p {
+  margin-bottom: 7px;
+}
+
+.newTaskDialog-buttons {
+  align-self: flex-end;
+  margin-top: 10px;
+}
+
+.newTaskDialog-buttonsCancel,
+.newTaskDialog-buttonsAdd {
+  background: none;
+  border: none;
+  text-align: center;
+  width: 80px;
+  height: 27px;
+  border-radius: 5px;
+}
+
+.newTaskDialog-buttonsCancel {
+  margin-right: 15px;
+  border: 1px solid black;
+}
+
+.newTaskDialog-buttonsAdd {
+  background-color: black;
+  color: white;
+}
+
+.newTaskDialog-buttons > button:active {
+  box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.85);
+}
