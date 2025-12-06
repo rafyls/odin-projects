@@ -3,8 +3,30 @@
   <head>
     <meta charset="UTF-8">
     <title>TickList</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer">
   </head>
   <body>
-    <h1>TickList</h1>
+    <div class="sidebar">
+      <div class="mainHeading">
+        <i class="fa-solid fa-clipboard-list mainHeading-icon" style="font-size: 2.75rem;"></i>
+        <h1 class="mainHeading-text">TickList</h1>
+      </div>
+      <button class="addNewTaskButton">
+        <i class="fa-solid fa-square-plus addNewTaskButton-icon" style="font-size: 1.55rem;"></i>
+        Add New Task
+      </button>
+      <h2>Projects</h2>
+      <button class="todayProjectButton">
+        <i class="fa-solid fa-calendar-check todayProjectButton-icon" style="font-size: 1.3rem;"></i>
+        Today
+      </button>
+      <button class="newProjectButton">
+        <i class="fa-solid fa-circle-plus newProjectButton-icon" style="font-size: 1.55rem;"></i>
+        Add New Project
+      </button>
+    </div>
+    <div class="mainContent">
+      <h3 class="mainContent-projectName">Today</h3>
+    </div>
   </body>
 </html>
