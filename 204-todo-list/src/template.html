@@ -24,6 +24,17 @@
         <i class="fa-solid fa-circle-plus newProjectButton-icon" style="font-size: 1.55rem;"></i>
         Add New Project
       </button>
+      <div class="projects">
+        <button id="project-1" class="todayProjectButton userProjectsButton">
+        Project 1
+        </button>
+        <button class="projects-modifyProjectButton taskItem-modifyTaskButton">
+        <i class="fa-solid fa-pen"></i>
+        </button>
+        <button class="projects-deleteProjectButton taskItem-modifyTaskButton">
+            <i class="fa-solid fa-trash-can"></i>
+        </button>
+      </div>
     </div>
     <div class="mainContent">
       <h3 class="mainContent-projectName">Today</h3>
@@ -60,14 +71,14 @@
           </div>
         </form>
       </dialog>
-      <dialog class="newTaskDialog newProjectDialog" open>
+      <dialog class="newTaskDialog newProjectDialog">
         <div class="newTaskDialog-heading">
           <h2>Add New Project</h2>
           <i class="fa-solid fa-circle-xmark fa-2x newTaskDialog-closeIcon"></i>
         </div>
         <form class="newTaskDialog-form newProjectDialog-form" method="dialog">
-          <label for="title">Project Name</label>
-          <input type="text" id="title" required autofocus>
+          <label for="titleProject">Project Name</label>
+          <input type="text" id="titleProject" required autofocus>
           <div class="newTaskDialog-buttons newProjectDialog-buttons">
             <button type="reset" class="newTaskDialog-buttonsCancel" value="cancel">Cancel</button>
             <button type="submit" class="newTaskDialog-buttonsAdd" value="add">Add</button>

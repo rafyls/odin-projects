@@ -56,7 +56,7 @@ img, svg, video {
 .todayProjectButton,
 .newProjectButton {
   background: none;
-  border: 1px solid;  /* to remove later */
+  border: none;
   width: 235px;
   height: 40px;
   display: flex;
@@ -248,4 +248,21 @@ img, svg, video {
 
 .newProjectDialog-buttons {
   margin-top: 30px;
+}
+
+.userProjectsButton {
+  width: fit-content;
+  margin-left: 40px;
+  margin-right: 55px;
+}
+
+.projects {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.projects i {
+  margin-top: 5px;
 }
