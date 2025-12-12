@@ -70,4 +70,4 @@ function convertDateFormDisplay(dateInput) {
 }
 
 export {handleAddTask, handleCloseDialog, handleCreateProject, 
-handleSubmitDialogTask};
+handleSubmitDialogTask, projects, currentProject, convertDateFormDisplay};
