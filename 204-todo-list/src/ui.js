@@ -354,4 +354,66 @@ function handleDeleteTask(event, taskUI) {
   mainContent.removeChild(hr);
 }
 
-export { addTaskUI };
+function addProjectUI(project) {
+  const mainContent = document.body.querySelector(".mainContent");
+  const sidebar = document.body.querySelector(".sidebar");
+
+  const projectNameUI = mainContent.querySelector(".mainContent-projectName");
+  projectNameUI.textContent = project.name;
+  
+  const div = document.createElement("div");
+  div.classList.add("projects");
+
+  const button1 = document.createElement("button");
+  button1.classList.add("todayProjectButton", "userProjectsButton");
+  const id = "project-" + project.id;
+  button1.setAttribute("id", id);
+  button1.textContent = project.name;
+
+  const button2 = document.createElement("button");
+  button2.classList.add("projects-modifyProjectButton", "taskItem-modifyTaskButton");
+
+  const button3 = document.createElement("button");
+  button3.classList.add("projects-deleteProjectButton", "taskItem-modifyTaskButton");
+
+  const i21 = document.createElement("i");
+  i21.classList.add("fa-solid", "fa-pen");
+
+  const i31 = document.createElement("i");
+  i31.classList.add("fa-solid", "fa-trash-can");
+
+  div.appendChild(button1);
+  div.appendChild(button2);
+  div.appendChild(button3);
+
+  button2.appendChild(i21);
+  button3.appendChild(i31);
+
+  sidebar.appendChild(div);
+
+  button1.addEventListener("click", function(event) {
+    handleReadProject(event, div);
+  });
+
+  button2.addEventListener("click", function(event) {
+    handleModifyProject(event, div);
+  });
+
+  button3.addEventListener("click", function(event) {
+    handleDeleteProject(event, div);
+  });
+}
+
+function handleReadProject(event, projectUI) {
+  
+}
+
+function handleModifyProject(event, projectUI) {
+  
+}
+
+function handleDeleteProject(event, projectUI) {
+  
+}
+
+export { addTaskUI, addProjectUI };

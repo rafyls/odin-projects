@@ -2,7 +2,7 @@ import "./assets/css/normalize.css";
 import "./style.css";
 
 import {handleAddTask, handleCloseDialog, handleCreateProject, 
-handleSubmitDialogTask} from "./listeners.js";
+handleSubmitDialogTask, handleSubmitDialogProject} from "./listeners.js";
 
 const addNewTaskButton = document.body.querySelector(".addNewTaskButton");
 addNewTaskButton.addEventListener("click", handleAddTask);
@@ -17,3 +17,7 @@ closeModalDialogButtons.forEach((button) => {
 
 const addNewTaskForm = document.body.querySelector(".newTaskDialog-form");
 addNewTaskForm.addEventListener("submit", handleSubmitDialogTask);
+
+
+const addNewProjectForm = document.body.querySelector(".newProjectDialog-form");
+addNewProjectForm.addEventListener("submit", handleSubmitDialogProject);

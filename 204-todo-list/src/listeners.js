@@ -1,5 +1,5 @@
 import { Task, Project } from "./data.js";
-import { addTaskUI } from "./ui.js";
+import { addTaskUI, addProjectUI } from "./ui.js";
 import { format } from "date-fns";
 
 let projects = [];
@@ -69,5 +69,21 @@ function convertDateFormDisplay(dateInput) {
   return dateOutput;
 }
 
+function handleSubmitDialogProject() {
+  const addNewProjectForm = document.body.querySelector(".newProjectDialog-form");
+  
+  const projectNameInput = addNewProjectForm.querySelector("#titleProject");
+  const projectName = projectNameInput.value;
+
+  const project = new Project(projectName, []);
+
+  currentProject = project.id;
+  projects[currentProject] = project;
+
+  addProjectUI(project);
+
+  addNewProjectForm.reset();
+}
+
 export {handleAddTask, handleCloseDialog, handleCreateProject, 
-handleSubmitDialogTask, projects, currentProject, convertDateFormDisplay};
+handleSubmitDialogTask, projects, currentProject, convertDateFormDisplay, handleSubmitDialogProject};
