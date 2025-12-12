@@ -336,7 +336,22 @@ function handleModifyTask(event, taskUI) {
 }
 
 function handleDeleteTask(event, taskUI) {
+  const input = taskUI.querySelector('input[type="checkbox"]');
+  const idvalue = input.getAttribute("id");
+  const idarr = idvalue.split("-");
+  const taskid = Number(idarr[1]);
 
+  projects[currentProject].tasks[taskid] = null;
+
+  const element = taskUI;
+  while (element.firstChild) {
+    element.removeChild(element.firstChild);
+  }
+
+  const mainContent = document.body.querySelector(".mainContent");  
+  const hr = taskUI.nextElementSibling;
+  mainContent.removeChild(taskUI);
+  mainContent.removeChild(hr);
 }
 
 export { addTaskUI };
