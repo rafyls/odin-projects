@@ -304,7 +304,8 @@ function handleModifyTask(event, taskUI) {
 
   dialog.showModal();
 
-  form.addEventListener("submit", () => {
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
     task.title = input1.value;
     task.description = textarea.value;
     task.dueDate = input3.value;
@@ -332,6 +333,12 @@ function handleModifyTask(event, taskUI) {
     if (priority !== null) {
       priority.textContent = task.priority;
     }
+
+    const element = dialog;
+    while (element.firstChild) {
+      element.removeChild(element.firstChild);
+    }
+    mainContent.removeChild(dialog);
   });
 }
 
@@ -409,7 +416,98 @@ function handleReadProject(event, projectUI) {
 }
 
 function handleModifyProject(event, projectUI) {
+  const input = projectUI.querySelector('button');
+  const idvalue = input.getAttribute("id");
+  const idarr = idvalue.split("-");
+  const projectid = Number(idarr[1]);
+
+  const project = projects[projectid];
+
+  const mainContent = document.body.querySelector(".mainContent");
   
+  const dialog = document.createElement("dialog");
+  dialog.classList.add("newTaskDialog", "newProjectDialog");
+
+  const div1 = document.createElement("div");
+  div1.classList.add("newTaskDialog-heading");
+
+  const div1h2 = document.createElement("h2");
+  div1h2.textContent = "Edit Project Name";
+
+  const div1i = document.createElement("i");
+  div1i.classList.add("fa-solid", "fa-circle-xmark", "fa-2x", "newTaskDialog-closeIcon");
+
+  const form = document.createElement("form");
+  form.classList.add("newTaskDialog-form", "newProjectDialog-form");
+  form.setAttribute("method", "dialog");
+
+  const label1 = document.createElement("label");
+  label1.setAttribute("for", "titleProject");
+  label1.textContent = "Project Name";
+  const input1 = document.createElement("input");
+  input1.setAttribute("type", "text");
+  input1.setAttribute("id", "titleProject");
+  input1.setAttribute("required", "required");
+  input1.setAttribute("autofocus", "autofocus");
+  input1.value = project.name;
+
+  const div3 = document.createElement("div");
+  div3.classList.add("newTaskDialog-buttons", "newProjectDialog-buttons");
+
+  const button1 = document.createElement("button");
+  button1.setAttribute("type", "low");
+  button1.setAttribute("class", "newTaskDialog-buttonsCancel");
+  button1.setAttribute("value", "cancel");
+  button1.textContent = "Cancel";
+
+  const button2 = document.createElement("button");
+  button2.setAttribute("type", "submit");
+  button2.setAttribute("class", "newTaskDialog-buttonsAdd");
+  button2.setAttribute("value", "edit");
+  button2.textContent = "Edit";
+
+  dialog.appendChild(div1);
+  dialog.appendChild(form);
+
+  div1.appendChild(div1h2);
+  div1.appendChild(div1i);
+
+  form.appendChild(label1);
+  form.appendChild(input1);
+  form.appendChild(div3);
+
+  div3.appendChild(button1);
+  div3.appendChild(button2);
+
+  mainContent.appendChild(dialog);
+
+  div1i.addEventListener("click", () => {
+    dialog.close();
+    const element = dialog;
+    while (element.firstChild) {
+      element.removeChild(element.firstChild);
+    }
+    mainContent.removeChild(dialog);
+  });
+
+  dialog.showModal();
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    project.name = input1.value;
+
+    const projectNameSidebar = projectUI.querySelector('.userProjectsButton');
+    const projectNameUI = mainContent.querySelector(".mainContent-projectName");
+
+    projectNameSidebar.textContent = project.name;
+    projectNameUI.textContent = project.name;
+
+    const element = dialog;
+    while (element.firstChild) {
+      element.removeChild(element.firstChild);
+    }
+    mainContent.removeChild(dialog);
+  });
 }
 
 function handleDeleteProject(event, projectUI) {
