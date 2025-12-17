@@ -511,7 +511,37 @@ function handleModifyProject(event, projectUI) {
 }
 
 function handleDeleteProject(event, projectUI) {
-  
+  const mainContent = document.body.querySelector(".mainContent");
+  const sidebar = document.body.querySelector(".sidebar");
+
+  const button = projectUI.querySelector('button');
+  const idvalue = button.getAttribute("id");
+  const idarr = idvalue.split("-");
+  const projectid = Number(idarr[1]);
+
+  const taskItems = mainContent.querySelectorAll('.taskItem');
+  const hrs = mainContent.querySelectorAll('.mainContent-sep');
+
+  taskItems.forEach(taskItem => {
+    taskItem.remove();
+  });
+
+  hrs.forEach(hr => {
+    hr.remove();
+  });
+
+  projectUI.remove();
+
+  projects[projectid].tasks = [];
+
+  projects[projectid] = null;
+
+  const projectNameUI = mainContent.querySelector(".mainContent-projectName");
+  projectNameUI.textContent = projects[0].name;
+
+  for (let i = 0; i < projects[0].tasks.length; i++) {
+    addTaskUI(projects[0].tasks[i]);
+  }
 }
 
 export { addTaskUI, addProjectUI };
