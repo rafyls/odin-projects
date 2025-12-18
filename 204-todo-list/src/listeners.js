@@ -108,5 +108,34 @@ function handleSubmitDialogProject() {
   addNewProjectForm.reset();
 }
 
+function handleTodayProject() {
+  const mainContent = document.body.querySelector(".mainContent");
+
+  const taskItems = mainContent.querySelectorAll('.taskItem');
+  const hrs = mainContent.querySelectorAll('.mainContent-sep');
+
+  taskItems.forEach(taskItem => {
+    taskItem.remove();
+  });
+
+  hrs.forEach(hr => {
+    hr.remove();
+  });
+
+  const project = state.projects[0];
+
+  const projectNameUI = mainContent.querySelector(".mainContent-projectName");
+  projectNameUI.textContent = project.name;
+
+  for (let i = 0; i < state.projects[0].tasks.length; i++) {
+    if (state.projects[0].tasks[i] !== null) {
+      addTaskUI(state.projects[0].tasks[i]);
+    }
+  }
+
+  setCurrentProject(state.projects[0].id);
+}
+
 export {handleAddTask, handleCloseDialog, handleCreateProject, 
-handleSubmitDialogTask, state, setCurrentProject, convertDateFormDisplay, handleSubmitDialogProject};
+handleSubmitDialogTask, state, setCurrentProject, convertDateFormDisplay, 
+handleSubmitDialogProject, handleTodayProject};

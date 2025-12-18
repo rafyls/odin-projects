@@ -348,8 +348,7 @@ function handleDeleteTask(event, taskUI) {
   const idarr = idvalue.split("-");
   const taskid = Number(idarr[1]);
 
-  let task = state.projects[state.currentProjectId].getTaskById(taskid); 
-  task = null;
+  state.projects[state.currentProjectId].tasks[taskid] = null;
 
   const element = taskUI;
   while (element.firstChild) {
@@ -424,7 +423,36 @@ function addProjectUI(project) {
 }
 
 function handleReadProject(event, projectUI) {
-  
+  const mainContent = document.body.querySelector(".mainContent");
+
+  const taskItems = mainContent.querySelectorAll('.taskItem');
+  const hrs = mainContent.querySelectorAll('.mainContent-sep');
+
+  taskItems.forEach(taskItem => {
+    taskItem.remove();
+  });
+
+  hrs.forEach(hr => {
+    hr.remove();
+  });
+
+  const button = projectUI.querySelector('button');
+  const idvalue = button.getAttribute("id");
+  const idarr = idvalue.split("-");
+  const projectid = Number(idarr[1]);
+
+  const project = state.projects[projectid];
+
+  const projectNameUI = mainContent.querySelector(".mainContent-projectName");
+  projectNameUI.textContent = project.name;
+
+  for (let i = 0; i < state.projects[projectid].tasks.length; i++) {
+    if (state.projects[projectid].tasks[i] !== null) {
+      addTaskUI(state.projects[projectid].tasks[i]);
+    }
+  }
+
+  setCurrentProject(state.projects[projectid].id);
 }
 
 function handleModifyProject(event, projectUI) {
