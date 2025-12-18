@@ -3,11 +3,32 @@ import { addTaskUI, addProjectUI } from "./ui.js";
 import { format } from "date-fns";
 
 let projects = [];
+let currentProjectId = null;
 
-const todayProject = new Project("Today", []);
-let currentProject = todayProject.id;
+function addProject(project) {
+  projects.push(project);
+}
 
-projects[currentProject] = todayProject;
+function setCurrentProject(id) {
+  currentProjectId = id;
+}
+
+function initDefaultProject() {
+  const todayProject = new Project("Today", []);
+  addProject(todayProject);
+  setCurrentProject(todayProject.id);
+}
+
+const state = {
+  get projects() {
+    return projects;
+  },
+  get currentProjectId() {
+    return currentProjectId;
+  }
+};
+
+initDefaultProject();
 
 function handleAddTask() {
   const addTaskDialog = document.body.querySelector(".newTaskDialog");
@@ -53,7 +74,9 @@ function handleSubmitDialogTask() {
   const task = new Task(titleInput.value, descriptionInput.value, dueDateui,
   duedateInput.value, priorityInput);
 
-  projects[currentProject].tasks.push(task);
+  const currentProject = state.projects[state.currentProjectId];
+  
+  currentProject.tasks.push(task);
 
   addTaskUI(task);
 
@@ -77,8 +100,8 @@ function handleSubmitDialogProject() {
 
   const project = new Project(projectName, []);
 
-  currentProject = project.id;
-  projects[currentProject] = project;
+  setCurrentProject(project.id); 
+  addProject(project);
 
   addProjectUI(project);
 
@@ -86,4 +109,4 @@ function handleSubmitDialogProject() {
 }
 
 export {handleAddTask, handleCloseDialog, handleCreateProject, 
-handleSubmitDialogTask, projects, currentProject, convertDateFormDisplay, handleSubmitDialogProject};
+handleSubmitDialogTask, state, setCurrentProject, convertDateFormDisplay, handleSubmitDialogProject};

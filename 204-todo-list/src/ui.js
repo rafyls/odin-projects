@@ -1,4 +1,4 @@
-import { projects, currentProject, convertDateFormDisplay } from "./listeners.js";
+import { state, setCurrentProject, convertDateFormDisplay } from "./listeners.js";
 
 function addTaskUI(task) {
   const mainContent = document.body.querySelector(".mainContent");
@@ -72,7 +72,7 @@ function handleExpandTask(event, taskUI) {
   const idarr = idvalue.split("-");
   const taskid = Number(idarr[1]);
 
-  const task = projects[currentProject].tasks[taskid];
+  const task = state.projects[state.currentProjectId].getTaskById(taskid);
 
   const div = document.createElement("div");
   div.classList.add("taskItem-details");
@@ -127,7 +127,7 @@ function handleCollapseTask(event, taskUI) {
   const idarr = idvalue.split("-");
   const taskid = Number(idarr[1]);
 
-  const task = projects[currentProject].tasks[taskid];
+  const task = state.projects[state.currentProjectId].getTaskById(taskid);
 
   const div = input.nextElementSibling;
 
@@ -145,7 +145,7 @@ function handleModifyTask(event, taskUI) {
   const idarr = idvalue.split("-");
   const taskid = Number(idarr[1]);
 
-  const task = projects[currentProject].tasks[taskid];
+  const task = state.projects[state.currentProjectId].getTaskById(taskid);
 
   const mainContent = document.body.querySelector(".mainContent");
   const dialog = document.createElement("dialog");
@@ -348,7 +348,8 @@ function handleDeleteTask(event, taskUI) {
   const idarr = idvalue.split("-");
   const taskid = Number(idarr[1]);
 
-  projects[currentProject].tasks[taskid] = null;
+  let task = state.projects[state.currentProjectId].getTaskById(taskid); 
+  task = null;
 
   const element = taskUI;
   while (element.firstChild) {
@@ -367,6 +368,17 @@ function addProjectUI(project) {
 
   const projectNameUI = mainContent.querySelector(".mainContent-projectName");
   projectNameUI.textContent = project.name;
+
+  const taskItems = mainContent.querySelectorAll('.taskItem');
+  const hrs = mainContent.querySelectorAll('.mainContent-sep');
+
+  taskItems.forEach(taskItem => {
+    taskItem.remove();
+  });
+
+  hrs.forEach(hr => {
+    hr.remove();
+  });
   
   const div = document.createElement("div");
   div.classList.add("projects");
@@ -421,7 +433,7 @@ function handleModifyProject(event, projectUI) {
   const idarr = idvalue.split("-");
   const projectid = Number(idarr[1]);
 
-  const project = projects[projectid];
+  const project = state.projects[projectid];
 
   const mainContent = document.body.querySelector(".mainContent");
   
@@ -512,7 +524,6 @@ function handleModifyProject(event, projectUI) {
 
 function handleDeleteProject(event, projectUI) {
   const mainContent = document.body.querySelector(".mainContent");
-  const sidebar = document.body.querySelector(".sidebar");
 
   const button = projectUI.querySelector('button');
   const idvalue = button.getAttribute("id");
@@ -532,16 +543,18 @@ function handleDeleteProject(event, projectUI) {
 
   projectUI.remove();
 
-  projects[projectid].tasks = [];
+  state.projects[projectid].tasks = [];
 
-  projects[projectid] = null;
+  state.projects[projectid] = null;
 
   const projectNameUI = mainContent.querySelector(".mainContent-projectName");
-  projectNameUI.textContent = projects[0].name;
+  projectNameUI.textContent = state.projects[0].name;
 
-  for (let i = 0; i < projects[0].tasks.length; i++) {
-    addTaskUI(projects[0].tasks[i]);
+  for (let i = 0; i < state.projects[0].tasks.length; i++) {
+    addTaskUI(state.projects[0].tasks[i]);
   }
+
+  setCurrentProject(state.projects[0].id);
 }
 
 export { addTaskUI, addProjectUI };
