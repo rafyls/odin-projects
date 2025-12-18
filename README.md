@@ -33,3 +33,6 @@ Projects built while studying The Odin Project curriculum.
 
 **203 Restaurant Page** ([README.md](./203-restaurant-page/README.md)):
 - https://rafyls.github.io/odin-projects/203-restaurant-page/
+
+**204 Todo List** ([README.md](./204-todo-list/README.md)):
+- https://rafyls.github.io/odin-projects/204-todo-list/
