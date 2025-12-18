@@ -20,6 +20,10 @@ class Project {
     this.id = Project.id;
     Project.id = Project.id + 1;
   }
+  
+  getTaskById(taskId) {
+    return this.tasks.find(task => task.id === taskId);
+  }
 }
 
 export {Task, Project};
